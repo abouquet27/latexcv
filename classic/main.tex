@@ -46,6 +46,9 @@
 % provides \isempty test
 \usepackage{xifthen}
 
+% for hyper links
+\usepackage{hyperref}
+
 %----------------------------------------------------------------------------------------
 %	FONT
 %----------------------------------------------------------------------------------------
@@ -263,6 +266,24 @@
 	#2
 }
 
+\newcommand{\customcvevent}[4]
+{
+
+\begin{tabular*}{1\textwidth}{p{13.6cm}  x{3.9cm}}
+	\textbf{#2} \textcolor{bgcol}{#3} &   \vspace{2.5pt}\textcolor{sectcol}{#1}
+\end{tabular*}
+
+\vspace{-8pt}
+\textcolor{softcol}{\hrule}
+\vspace{6pt}
+
+	\foreach \desc in {#4}{
+		\desc\\[3pt]
+	}
+	
+\vspace{3pt}
+}
+
 %----------------------------------------------------------------------------------------
 % CUSTOM STRUT FOR EMPTY BOXES
 %----------------------------------------- -----------------------------------------------
@@ -323,9 +344,9 @@
 %---------------------------------------------------------------------------------------
 %	META SECTION
 %----------------------------------------------------------------------------------------
-\metasection{Chexbres, Switzerland}{\textbf{Status:} M.Sc. Cybersecurity - Computer Science (on going) }
-\metasection{www.adrbqt.ch}{\textbf{Fields:} Cryptography, Software Security, Privacy Engineering, Machine Learning, Network Security} 
-\metasection{adrien.bouquet@bluewin.ch}{\textbf{Techs:} C, C++, Python, Rust, Git, Docker, Java, Scala, ASM, LLVM}
+\metasection{Chexbres, Switzerland}{\textbf{Status:} M.Sc. Cybersecurity - Computer Science Student}
+\metasection{\href{www.adrbqt.ch}{adrbqt.ch}}{\textbf{Fields:} Cryptography, Software Security, Privacy Engineering, Machine Learning, Network Security} 
+\metasection{adrien.bouquet@epfl.ch}{\textbf{Techs:} C, C++, Python, Rust, Git, Docker, Java, Scala, ASM, LLVM}
 \metasection{+41 77 441 57 87}{\textbf{Activities:} Music studies, Classical Accordion, Hiking, Cooking }
 \vspace{-2pt}
 \textcolor{softcol}{\hrule}
@@ -339,8 +360,11 @@
 \vspace{-6pt}
 \cvsection{Summary}
 
-Currently doing my Master in Computer Science (Cybersecurity) at École Polytechnique Fédérale of Lausanne (EPFL) 
-in Computer Science, I have a great curiosity for science in general, from computer science to Moreover, my love of the arts and music has also helped me to develop my creativity and hard-working spirit. 
+With great curiosity and determination, I have always had an interest in computer science and engineering. Presently, I am enrolled a Joint Master's degree in Cybersecurity (Computer Science) between 
+the Swiss Federal Institutes of Technology in Lausanne (EPFL) and Zurich (ETHZ), since September 2023. 
+Prior to that, I completed my Bachelor's degree in Computer Science at EPFL in 2023.
+Alongside my studies, my passion for the arts and my practice of music have developed a creative vision, perseverance and rigor in my work. 
+I look forward to exploring new perspectives through future ventures!
 
 %============================================================================%
 %
@@ -349,45 +373,53 @@ in Computer Science, I have a great curiosity for science in general, from compu
 %============================================================================%
 
 %---------------------------------------------------------------------------------------
+%	SKILLS
+%----------------------------------------------------------------------------------------
+\cvsection{Skills}
+
+%\textcolor{softcol}{\hrule}
+
+%
+\customcvevent{}{Languages}{}{
+	{I am native in French and fluent in English. I also have a standard level in German. (B2)}
+}
+
+%\textcolor{softcol}{\hrule}
+
+%
+\customcvevent{}{Engineering Fields}{}{
+	{During my Bachelor studies, Software Engineering, Theory of Computation and Mathematics were my main focus.},
+	{While pursuing my Master's degree, I primarily study Cryptography, Information Security, Software Security, Privacy Engineering, Machine Learning and Network Security.}
+}
+
+%---------------------------------------------------------------------------------------
 %	EXPERIENCE
 %----------------------------------------------------------------------------------------
 \cvsection{Experience}
 
-\cvevent{2016 - present}{Scientific Employee / PhD Student}{University of Bremen}{
-	{Develop and evaluate the next generation learning management system with Meteor},
-	{Define a new level of software for classroom management based on an extensive nursing curriculum.}
-}
+%\textcolor{softcol}{\hrule}
 
 %
-\cvevent{2014 - 2016}{IT Consultant for IBM XPages and Notes Domino}{We4IT GmbH Bremen}{
-	{Realize projects in XPages and We4IT Aveedo, monitor project status, conduct reports},
-	{Implement the frontend for a BPMN compatible engine within We4IT Aveedo}
+\cvevent{July 2024}{Teaching Assistant}{EPFL Summer School: Game Theory and AI}{
+	{Support the students in their projects and exercises},
 }
 
 %\textcolor{softcol}{\hrule}
 
 %
-\cvevent{2012 - 2014}{Scientific Employee / Software Development}{University of Bremen}{
-	{Invented a flexible assessment framework, targeting industrial trainees},
-	{Supervised software development lifecycle, Recruited team members}
+\cvevent{Spring 2024}{\href{https://github.com/abouquet27/typepp_report}{Master's Semester project}}{HexHive Lab of EPFL}{
+	{Building a robust test suite on type confusion vulnerabilities},
+	{Based on the paper "Type Confusion Detection for C++" from HexHive},
+	{Supervised by Nicolas Badoux and Prof. Mathias Payer}
 }
 
 %\textcolor{softcol}{\hrule}
 
 %
-\cvevent{2011 / 11}{Project Management Simulation Training}{Getoq Consulting}{
-	{Performed a two-day project simulation from management perspective},
-	{Topics included customer contracts, change management, controlling, operational tasks}
-}
-
-%\textcolor{softcol}{\hrule}
-
-
-%
-\cvevent{Spring 2023}{Bachelor's Semester Project}{Dependable Systems Lab of EPFL}{
-	{Implementing a heuristic Query Count Estimation}
-	{Based on the paper "Efficient State Merging in Symbolic Execution"},
-	{Supervised by Dr. Solal Pirelli and Prof. George Candea}
+\cvevent{Spring 2023}{\href{https://github.com/abouquet27/BachelorProject}{Bachelor's Semester Project}}{Dependable Systems Lab of EPFL}{
+	{Implementing a heuristic Query Count Estimation in LLVM},
+	{Based on the paper "Efficient State Merging in Symbolic Execution" from DS Lab},
+	{Supervised by Solal Pirelli, Can Cebeci and Prof. George Candea}
 }
 
 
@@ -399,21 +431,25 @@ in Computer Science, I have a great curiosity for science in general, from compu
 %\textcolor{softcol}{\hrule}
 
 %
-\cvevent{2023 - present}{Joint Master Degree }{EPFL - ETHZ}{
-}
+\customcvevent{2023 - present}{Joint Master Degree in Cybersecurity}{EPFL - ETHZ}{}
 
 %\textcolor{softcol}{\hrule}
 
 %
-\cvevent{2020 - 2023}{Bachelor of Computer Science}{Swiss Federal Institute of Technology Lausanne}{
-}
+\customcvevent{2020 - 2023}{Bachelor of Computer Science}{Swiss Federal Institute of Technology Lausanne}{}
 
 %\textcolor{softcol}{\hrule}
 
 %
-\cvevent{2017 - 2020}{Maturité Fédérale}{Gymnase Auguste Piccard}{
-}
+\customcvevent{2017 - 2020}{Maturité Fédérale}{Gymnase Auguste Piccard}{}
 
+
+%---------------------------------------------------------------------------------------
+%	HOBBIES SECTION
+%--------------------------------------------------------------------------------------
+\cvsection{Hobbies}
+In addition to my studies, I have followed a classical accordion course for 13 years, obtaining a certificate last year, as well as theoretical music courses. I also play an active part in accordion orchestras. 
+During my studies, I liked to take part and staff in events at EPFL and socialize with my peers. I also enjoy cooking, reading, travelling and hiking!
 
 %--------------------------------------------------------------------------------------------------
 %	ARTIFICIAL FOOTER (fancy footer cannot exceed linewidth) 
@@ -421,7 +457,7 @@ in Computer Science, I have a great curiosity for science in general, from compu
 
 \null
 \vspace*{\fill}
-\hspace{-0.25\linewidth}\colorbox{white}{\makebox[1.5\linewidth][c]{\mystrut  \textnormal{\textcolor{sectcol}{www.jankuester.com} $\cdot$ \textcolor{sectcol}{github.com/jankapunkt}}}}
+\hspace{-0.25\linewidth}\colorbox{white}{\makebox[1.5\linewidth][c]{\mystrut  \textnormal{ \textcolor{sectcol}{\href{https://www.linkedin.com/in/adrien-bouquet-3a1a742a4/}{LinkedIn}} $\cdot$ \textcolor{sectcol}{\href{github.com/abouquet27}{Github}}}}}
 
 
 
